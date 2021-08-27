@@ -62,7 +62,7 @@ public class UiTestingPage extends Base {
 			}
 	}
 	
-	public void headerTextFinder(By desiredText, String sampleText) {
+	public void textFinder(By desiredText, String sampleText) {
 		String desiredExtractedText = getText(desiredText);
 		
 		if(textMatch(desiredExtractedText,sampleText)) {
@@ -76,6 +76,15 @@ public class UiTestingPage extends Base {
 	public Boolean interactiveFields(By buttonIdentifier) {
 		return isDisplayed(buttonIdentifier);
 		
+	}
+	
+	public void inputName(By pageLocator, By fieldLocator, By buttonLocator, String inputText) {
+		click(pageLocator);
+		if(isDisplayed(fieldLocator) && isDisplayed(buttonLocator)) {
+			type(inputText,fieldLocator);
+			click(buttonLocator);
+		}
+		else System.out.println("Failed to type the name ");
 	}
 
 }

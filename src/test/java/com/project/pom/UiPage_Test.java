@@ -32,6 +32,8 @@ public class UiPage_Test {
 	By FormInputBox = By.id("hello-input");
 	By FormSubmitButton = By.id("hello-submit");
 	
+	By FormNameResponse = By.xpath("//*[@id=\"hello-text\"]");
+	
 	private String desiredText = "UI Testing Site";
 	
 	private String homeHeaderText = "Welcome to Pixelmatic QA department";
@@ -78,12 +80,12 @@ public class UiPage_Test {
 	public void displayedTextTest() throws InterruptedException {
 		testingPage.click(HomeIdLocator);
 		Thread.sleep(1000);
-		testingPage.headerTextFinder(HomeHeaderLocator,homeHeaderText);
-		testingPage.headerTextFinder(HomeBodyLocator,homeBodyText);
+		testingPage.textFinder(HomeHeaderLocator,homeHeaderText);
+		testingPage.textFinder(HomeBodyLocator,homeBodyText);
 		
 		Thread.sleep(1000);
 		testingPage.click(ErrorIdLocator);
-		testingPage.headerTextFinder(ErrorCode,ErrorSampleTextitle);
+		testingPage.textFinder(ErrorCode,ErrorSampleTextitle);
 	}
 	
 	@Test
@@ -95,6 +97,14 @@ public class UiPage_Test {
 		} else { System.out.print("Some interactive elements not found ");
 				}
 	}
+	
+	@Test
+	public void inputNameTest() {
+		testingPage.inputName(FormIdLocator, FormInputBox, FormSubmitButton, "John");
+		testingPage.textFinder(FormNameResponse, "Hello John!");
+			
+		}
+	
 
 
 }
