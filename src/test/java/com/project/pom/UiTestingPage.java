@@ -6,25 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class UiTestingPage extends Base {
-
-	By FormIdLocator = By.id("form");
-	By HomeIdLocator = By.id("home");
-	By ErrorIdLocator = By.id("error");
-	By HelloPageLocator = By.id("hello-text");
-	
-	By HomeActive = By.xpath("//*[@id=\"navbar\"]/ul/li[1]");
-	By FormActive = By.xpath("//*[@id=\"navbar\"]/ul/li[2]");
-	
-	By ErrorTitle = By.partialLinkText("404 Error: File not found :-(");
-	By FormLocator = By.name("simple Form Submission");
 	
 	By LogoLocator = By.xpath("//img[@src='assets/img/infinitefleet.jpeg']");
 	
-	By HomePageActive = By.xpath("//*[@id=\"navbar\"]/ul/li[1]");
-	By FormPageActive = By.xpath("//*[@id=\"navbar\"]/ul/li[2]");
 	
-	By FormInputBox = By.id("hello-input");
-	By FormSubmitButton = By.id("hello-submit");
 		
 	public UiTestingPage(WebDriver driver) {
 		super(driver);
